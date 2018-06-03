@@ -1,0 +1,12 @@
+--- # Delegate to function demo
+
+- hosts: Dev
+  sudo: yes
+  user: ansmaster
+  connection: ssh
+  tasks:
+  - name: Run a remote ping on the dev server
+    command: ping -c 4 Dev > /home/ansmaster/ping.out
+    delegate_to: 127.0.0.1
+  - name: Install a package
+    yum: pkg=httpd state=latest

@@ -11,10 +11,10 @@
 # Ex 1: Ungrouped hosts, specify before any group headers.
 localhost
 
-[Dev]
+[dev]
 ebudniks2.mylabserver.com
 
-[Prod]
+[prod]
 ebudniks3.mylabserver.com
 
 [debian]

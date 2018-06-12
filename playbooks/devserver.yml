@@ -1,0 +1,7 @@
+--- # Master Playbook for Web Server
+- hosts: dev
+  user: ansmaster
+  sudo: yes
+  connection: ssh
+  roles:
+    - dev

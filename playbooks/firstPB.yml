@@ -1,14 +1,15 @@
 --- # My First YAML Playbook for Ansible
 
-  hosts: dev
-  user: ansmaster
-  sudo: yes
-  connection: ssh
-  gather_facts: no
-  vars:
-    playbook_version: 0.1b
-  vars_files:
-    - conf/copyright.yml
-    - conf/devdefaults.yml
-  tasks:
-    yum: pkg=httpd status=latest
+ - name: Install httpd on dev servers
+   hosts: dev
+   user: ansmaster
+   sudo: yes
+   connection: ssh
+   gather_facts: no
+   vars:
+     playbook_version: 0.1b
+   vars_files:
+     - conf/copyright.yml
+     - conf/devdefaults.yml
+   tasks:
+     yum: pkg=httpd status=latest

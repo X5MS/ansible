@@ -13,7 +13,7 @@ localhost
 
 [dev]
 ebudniks2.mylabserver.com
-ebudniks4.mylabserver.com
+#ebudniks4.mylabserver.com
 
 [prod]
 ebudniks3.mylabserver.com

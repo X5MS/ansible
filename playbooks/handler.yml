@@ -1,0 +1,19 @@
+---
+
+- hosts: dev
+  become: yes
+  tasks:
+    - name: Change config
+      replace:
+        path: /etc/httpd/conf/httpd.conf
+        regexp: 'DocumentRoot.*$'
+        replace: 'DocumentRoot "/var/www/html"'
+        backup: yes
+      notify: 
+        - restart apache
+  handlers:
+    - name: restart apache
+      service:
+        name: httpd
+        state: restarted
+

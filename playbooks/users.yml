@@ -1,0 +1,11 @@
+---
+
+- hosts: dev
+  become: yes
+  tasks:
+    - name: create users
+      user:
+        name: "{{ item }}"
+      with_items:
+        - eddy
+        - x5ms

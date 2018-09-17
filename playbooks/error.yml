@@ -1,0 +1,13 @@
+---
+
+- hosts: local
+  tasks:
+    - name: get files
+      get_url:
+        url: "http://{{item}}/index.html"
+        dest: "/tmp/{{item}}"
+      ignore_errors: yes
+      with_items:
+        - ebudniks1
+        - ebudniks2
+        - ebudniks3

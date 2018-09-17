@@ -1,0 +1,31 @@
+---
+
+- hosts: dev
+  become: yes
+  tasks:
+  - name: create target directory
+    file:
+      path: /home/ansmaster/testfiles
+      state: directory
+      mode: 0755
+  - name: deploy files to dev server
+    copy:
+      src: /home/ansmaster/testfiles/file1
+      dest: /home/ansmaster/testfiles/file1
+    tags:
+      - devfile
+
+- hosts: prod
+  become: yes
+  tasks:
+  - name: create target directory
+    file:
+      path: /home/ansmaster/testfiles
+      state: directory
+      mode: 0755
+  - name: deploy files to prod server
+    copy:
+      src: /home/ansmaster/testfiles/file2
+      dest: /home/ansmaster/testfiles/file2
+    tags:
+      - prodfile
